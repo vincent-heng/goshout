@@ -1,0 +1,4 @@
+{
+    "getChatsLimit":100,
+    "getMessagesLimit": 100
+}
