@@ -3,14 +3,15 @@ package main
 import (
     "encoding/json"
     "os"
+    "log"
 )
 
 type Configuration struct {
-    getChatsLimit       int
-    getMessagesLimit    int
+    GetChatsLimit       int `json:"getChatsLimit"`
+    GetMessagesLimit    int `json:"getMessagesLimit"`
 }
 
-func loadConfigurationFile() Configuration { // FIXME returns {0,0}
+func loadConfigurationFile() Configuration {
     file, err1 := os.Open("conf.json")
     checkErr(err1)
     decoder := json.NewDecoder(file)
